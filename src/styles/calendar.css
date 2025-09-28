@@ -360,3 +360,27 @@ svg{width:100vw;height:20vh}
 .modal-buttons button:hover {
   background-color: #0056b3;
 }
+
+
+.weekly-change{
+  background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.weekly-calendar{
+  margin: 40px;
+}
+
+.navigation{
+  margin: 0 !important;
+}
+
+.days-row-week{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px 0;
+  background-color: #f0f0f0;
+}

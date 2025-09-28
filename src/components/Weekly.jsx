@@ -67,12 +67,12 @@ const Weekly = () => {
           margin: "100px 0",
         }}
       >
-        <button onClick={handlePrevWeek}>← Prethodna</button>
+        <button className="weekly-change" onClick={handlePrevWeek}>‹</button>
         <div>
-          {format(weekDates[0], "dd.MM.yyyy")} -{" "}
-          {format(weekDates[6], "dd.MM.yyyy")}
+          <h2>{format(weekDates[0], "dd.MM.yyyy")} -{" "}
+          {format(weekDates[6], "dd.MM.yyyy")}</h2>
         </div>
-        <button onClick={handleNextWeek}>Sledeća →</button>
+        <button className="weekly-change" onClick={handleNextWeek}>›</button>
       </div>
 
       {/* Kalendar grid */}
@@ -97,8 +97,10 @@ const Weekly = () => {
                 borderBottom: "1px solid #ccc",
               }}
             >
-              <div>{format(date, "EEEE").slice(0, 3)}</div>
-              <div>{format(date, "dd.MM")}</div>
+              <div className="days-row-week">
+                <div>{format(date, "EEEE").slice(0, 3)}</div>
+                <div>{format(date, "dd.MM")}</div>
+              </div>
             </div>
           ))}
 
