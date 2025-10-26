@@ -35,7 +35,7 @@ const Calendar = () => {
 
   const handleDayClick = (day) => {
     if (skipAddModal) {
-      setSkipAddModal(false); 
+      setSkipAddModal(false);
 
       return;
     }
@@ -74,7 +74,7 @@ const Calendar = () => {
     const newTask = {
       text: taskInput.trim(),
       category: taskCategory?.trim() || "Ostalo",
-       time: taskTime || "",
+      time: taskTime || "",
     };
 
     let updatedDayTasks = [...(tasks[dateKey] || [])];
@@ -182,7 +182,8 @@ const Calendar = () => {
                       setShowModal(true);
                     }}
                   >
-                    • {task.time ? `${task.time} - ` : ''}{task.text}
+                    • {task.time ? `${task.time} - ` : ""}
+                    {task.text}
                   </div>
                 );
               })}
@@ -285,7 +286,9 @@ const Calendar = () => {
             <ul>
               {selectedDayTasks.map((task, index) => (
                 <li key={index}>
-                  • {task.time ? `${task.time} - ` : ''}{task.text}{task.category}
+                  • {task.time ? `${task.time} - ` : ""}
+                  {task.text}
+                  {task.category}
                 </li>
               ))}
             </ul>
@@ -293,6 +296,37 @@ const Calendar = () => {
           </div>
         </div>
       )}
+      <div className="waves" style={{position: "absolute", bottom:0, left:0, width:"100%", zIndex:-1}}>
+        <svg viewBox="0 0 2 1" preserveAspectRatio="none">
+          <defs>
+            <path
+              id="w"
+              d="
+      m0 1v-.5 
+      q.5.5 1 0
+      t1 0 1 0 1 0
+      v.5z"
+            />
+          </defs>
+          <g>
+            <use
+              href="#w"
+              y=".0"
+              fill="none"
+              stroke="black"
+              stroke-width="0.005"
+            />
+            <use href="#w" y=".1" fill="#00000018" />
+            <use
+              href="#w"
+              y=".2"
+              fill="none"
+              stroke="black"
+              stroke-width="0.008"
+            />
+          </g>
+        </svg>
+      </div>
     </div>
   );
 };

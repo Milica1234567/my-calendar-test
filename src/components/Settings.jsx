@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
+import defaultAvatar from "../assets/avatars/defaultAvatar.png";
+import AvatarSelector from "./AvatarSelector";
 
 const defaultCategory = {
   name: "Ostalo",
   color: "#000000",
   id: "default",
+  avatar: defaultAvatar, // dodaj default avatar
 };
 
 const initialCategories = [
-  { name: "", color: "", id: "custom-1" },
-  { name: "", color: "", id: "custom-2" },
-  { name: "", color: "", id: "custom-3" },
+  { name: "", color: "", avatar: "", id: "custom-1" },
+  { name: "", color: "", avatar: "", id: "custom-2" },
+  { name: "", color: "", avatar: "", id: "custom-3" },
 ];
 
 const colorOptions = [
@@ -43,55 +46,67 @@ export default function CategorySettings() {
     setCategories([...initialCategories, defaultCategory]);
   };
 
+  const handleSelectAvatar = (index, selectedAvatar) => {
+    const updated = [...categories];
+    updated[index].avatar = selectedAvatar;
+    setCategories(updated);
+  };
+
   return (
-    <div className="max-w-xl mx-auto p-4">
-      <h2 className="text-2xl font-semibold mb-4">Podešavanje kategorija</h2>
-
-      {categories.slice(0, 3).map((category, index) => (
-        <div key={category.id} className="mb-4 bg-white p-4 rounded shadow">
-          <label className="block mb-2 font-medium">
-            Naziv kategorije {index + 1}
-          </label>
-          <input
-            type="text"
-            value={category.name}
-            onChange={(e) =>
-              handleChange(index, "name", e.target.value)
-            }
-            placeholder={`Unesi naziv kategorije`}
-            className="w-full p-2 border border-gray-300 rounded mb-3"
-          />
-
-          <label className="block mb-2 font-medium">Boja</label>
-          <select
-            value={category.color}
-            onChange={(e) =>
-              handleChange(index, "color", e.target.value)
-            }
-            className="w-full p-2 border border-gray-300 rounded"
-          >
-            <option value="">Izaberi boju</option>
-            {colorOptions.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.name}
-              </option>
-            ))}
-          </select>
-        </div>
-      ))}
-
-      <div className="mt-6 p-4 border-t pt-4 text-sm text-gray-700">
-        <p>
-          <strong>Podrazumevana kategorija:</strong> <span className="ml-2 text-black">Ostalo</span>
-        </p>
+    <div className="settings-container">
+      <div className="profile-settings">
+        <h2>Profile settings</h2>
       </div>
 
-      <button
-        onClick={handleReset}
-        className="mt-6 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded"
-      >
-        Resetuj kategorije
-      </button>
+      <div className="cattegories-settings">
+        <h2>Category settings</h2>
+
+        {categories.slice(0, 3).map((category, index) => (
+          <div
+            className="category"
+            key={category.id}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              justifyContent: "center",
+              backgroundColor: category.color || "#f3f4f6",
+            }}
+          >
+            <AvatarSelector
+              selectedAvatar={category.avatar || defaultAvatar}
+              onSelect={(img) => handleSelectAvatar(index, img)}
+            />
+
+            <input
+              type="text"
+              value={category.name}
+              onChange={(e) => handleChange(index, "name", e.target.value)}
+              placeholder="Kategorija"
+            />
+
+            <select
+              value={category.color}
+              onChange={(e) => handleChange(index, "color", e.target.value)}
+            >
+              <option value="">Color</option>
+              {colorOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.name}
+                </option>
+              ))}
+            </select>
+          </div>
+        ))}
+
+        <div>
+          <p>
+            <strong>Default kategorija:</strong> <span>Ostalo</span>
+          </p>
+        </div>
+
+        <button onClick={handleReset}>Resetuj kategorije</button>
+      </div>
     </div>
   );
 }
