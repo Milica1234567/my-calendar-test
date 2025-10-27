@@ -396,7 +396,7 @@ svg {
   margin: 100px 0 0 100px;
 }
 
-.cattegory{
+.cattegory {
   display: flex;
   flex-direction: row;
   color: red;
@@ -404,13 +404,72 @@ svg {
 
 /*avatar style*/
 
-
 .avatar-container {
-  height: 50px;
-  width: 50px;
+  height: 25px;
+  width: 25px;
+  padding: 8px;
+}
+
+.avatar-container-main {
+  height: 45px;
+  width: 45px;
+  padding: 8px;
+}
+
+.avatar-container-main img {
+  width: 100%;
+  height: 100%;
 }
 
 .avatar-container img {
   width: 100%;
   height: 100%;
+}
+
+.twitter-picker input {
+  display: none !important;
+}
+
+.twitter-picker {
+  border-radius: 12px;
+  box-shadow: none !important;
+  margin: 12px 0;
+}
+
+.twitter-picker > div > span > div {
+  border-radius: 50% !important;
+  transition: transform 0.15s ease;
+}
+
+.twitter-picker > div > span > div:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.category-input{
+  width: 80%;
+  border: none;
+  border-bottom: 1px solid;
+  margin: 10px;
+  height: 30px;
+  padding-left: 8px;
+  background-color: transparent;
+}
+
+.category-input:focus{
+  outline: none;
+  border-bottom: 2px solid;
+  background-color: transparent;
+}
+
+.button-style{
+  width: fit-content;
+  padding: 4px 12px;
+  height: 30px;
+  margin: 10px;
+  color: #000000;
+  border: 1px solid;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: transparent;
 }

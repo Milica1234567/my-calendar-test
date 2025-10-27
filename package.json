@@ -1,5 +1,5 @@
 {
-  "homepage": "https://milica1234567.github.io/my-calendar-test",
+  "homepage": "https://milica1234567.github.io/my-calendar-test/",
   "name": "my-calendar",
   "version": "0.1.0",
   "private": true,
@@ -12,6 +12,7 @@
     "date-fns": "^2.30.0",
     "emailjs-com": "^3.2.0",
     "react": "^19.1.0",
+    "react-color": "^2.19.3",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.7.1",
     "react-scripts": "5.0.1",
@@ -25,7 +26,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  
   "eslintConfig": {
     "extends": [
       "react-app",

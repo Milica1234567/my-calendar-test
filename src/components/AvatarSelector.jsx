@@ -21,14 +21,21 @@ const AvatarDropdown = ({ selectedAvatar, onSelect }) => {
   }, []);
 
   return (
-    <div ref={dropdownRef} style={{cursor:"pointer"}} >
+    <div ref={dropdownRef} style={{ cursor: "pointer" }}>
       <div onClick={() => setOpen(!open)}>
         {selectedAvatar ? (
-          <div className="avatar-container">
+          <div
+            className="avatar-container-main"
+            style={{
+              background: "#ffffff",
+              borderRadius: "50%",
+              padding: "12px",
+            }}
+          >
             <img src={selectedAvatar} alt="avatar" />
           </div>
         ) : (
-          <div className="avatar-container">
+          <div className="avatar-container-main">
             <img src={defaultAvatar} alt="" />
           </div>
         )}
@@ -39,13 +46,22 @@ const AvatarDropdown = ({ selectedAvatar, onSelect }) => {
           className="dropdown-avatar"
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(3, 50px)", 
+            gridTemplateColumns: "repeat(3, 50px)",
             gap: "10px",
             padding: "10px",
+            position:"absolute",
+            background:"#c4c4c4",
+            zIndex:"1000",
+            borderRadius:"16px",
+            marginTop:"8px",
+            transform: "translateX(-30%) scale(1)",
           }}
         >
           {avatarImages.map((img, index) => (
-            <div className="avatar-container">
+            <div
+              className="avatar-container"
+              style={{ borderRadius: "50%", background: "#ffffff" }}
+            >
               <img
                 key={index}
                 src={img}
@@ -57,7 +73,6 @@ const AvatarDropdown = ({ selectedAvatar, onSelect }) => {
               />
             </div>
           ))}
-          <h1>test</h1>
         </div>
       )}
     </div>

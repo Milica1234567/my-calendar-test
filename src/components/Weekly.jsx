@@ -192,7 +192,7 @@ const Weekly = () => {
             </div>
           ))}
 
-          {/* Red za taskove bez vremena */}
+          
           <div style={{ fontSize: 12, color: "#666", padding: "8px" }}>
             bez vremena
           </div>
@@ -205,7 +205,7 @@ const Weekly = () => {
                 padding: "2px",
                 cursor: "pointer",
               }}
-              onClick={() => handleDayClick(date, null)} // 👈 OVDE
+              onClick={() => handleDayClick(date, null)} 
             >
               {getTasksWithoutTime(date).map((task, idx) => (
                 <div key={idx}>{task.text}</div>
@@ -234,7 +234,7 @@ const Weekly = () => {
                     padding: "2px",
                     cursor: "pointer",
                   }}
-                  onClick={() => handleDayClick(date, hour)} // 👈 OVDE
+                  onClick={() => handleDayClick(date, hour)} 
                 >
                   {getTasksForDayAndHour(date, hour).map((task, idx) => (
                     <div key={idx}>{task.text}</div>

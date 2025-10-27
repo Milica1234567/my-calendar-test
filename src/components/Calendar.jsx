@@ -182,7 +182,7 @@ const Calendar = () => {
                       setShowModal(true);
                     }}
                   >
-                    • {task.time ? `${task.time} - ` : ""}
+                    {task.category.avatar} {task.time ? `${task.time} - ` : ""}
                     {task.text}
                   </div>
                 );
@@ -192,7 +192,7 @@ const Calendar = () => {
                   className="more-tasks"
                   onClick={(e) => {
                     e.stopPropagation();
-                    setSkipAddModal(true); // ← ovo sprečava otvaranje add modala
+                    setSkipAddModal(true); 
                     setSelectedDayTasks(dayTasks);
                     setSelectedDate(cloneDay);
                     setShowAllTasksModal(true);
