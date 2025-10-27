@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/my-calendar-test/static/css/main.07e86166.css",
-    "main.js": "/my-calendar-test/static/js/main.be49ac23.js",
-    "static/js/453.567ef860.chunk.js": "/my-calendar-test/static/js/453.567ef860.chunk.js",
+    "main.css": "/my-calendar-test/static/css/main.91787c0b.css",
+    "main.js": "/my-calendar-test/static/js/main.8eab6ea5.js",
+    "static/js/453.db2c8a60.chunk.js": "/my-calendar-test/static/js/453.db2c8a60.chunk.js",
     "static/media/setting.png": "/my-calendar-test/static/media/setting.faddda9dd83e35f6ae6b.png",
     "static/media/calendar (4).png": "/my-calendar-test/static/media/calendar (4).083b1ae79a87d3bc3046.png",
     "static/media/defaultAvatar.png": "/my-calendar-test/static/media/defaultAvatar.1bd3dd5b0c6badc4b0dd.png",
@@ -13,12 +13,12 @@
     "static/media/home (1).png": "/my-calendar-test/static/media/home (1).34510ce355822e6f4f5b.png",
     "static/media/dashboard.png": "/my-calendar-test/static/media/dashboard.8f127dc628a1c613f2d6.png",
     "index.html": "/my-calendar-test/index.html",
-    "main.07e86166.css.map": "/my-calendar-test/static/css/main.07e86166.css.map",
-    "main.be49ac23.js.map": "/my-calendar-test/static/js/main.be49ac23.js.map",
-    "453.567ef860.chunk.js.map": "/my-calendar-test/static/js/453.567ef860.chunk.js.map"
+    "main.91787c0b.css.map": "/my-calendar-test/static/css/main.91787c0b.css.map",
+    "main.8eab6ea5.js.map": "/my-calendar-test/static/js/main.8eab6ea5.js.map",
+    "453.db2c8a60.chunk.js.map": "/my-calendar-test/static/js/453.db2c8a60.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.07e86166.css",
-    "static/js/main.be49ac23.js"
+    "static/css/main.91787c0b.css",
+    "static/js/main.8eab6ea5.js"
   ]
 }
